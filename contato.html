@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .submit-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--fonte-principal);
+            font-size: 1rem;
+            box-sizing: border-box;
+            background-color: var(--branco);
+            appearance: none;
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        .form-group fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+
+        .form-group legend {
+            font-weight: 600;
+            padding: 0 5px;
+            color: var(--preto);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checkbox-group input, .radio-group input {
+            margin-right: 8px;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .reset-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: transparent;
+            color: var(--cinza);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: 2px solid var(--cinza);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background-color: #f0f0f0;
+            color: var(--preto);
+        }
+
+    </style>
+
+    <title>Contato - YCare</title>
+</head>
+<body>
+    <header>
+        <a href=".\home.html" class="logo-header">
+            <img src="./imagens/logoHorizontal.png" alt="Logo da YCare - Voltar para página inicial" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href=".\home.html">Home</a></li>
+                <li><a href=".\sobre-nos.html">Sobre nós</a></li>
+                <li><a href=".\yolanda.html">Dona Yolanda</a></li>
+                <li><a href=".\galeria.html">Galeria</a></li>
+                <li><a href=".\contato.html">Fale conosco</a></li>
+                <li><a href=".\doacao.html">Doação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <section class="contact-form-section">
+            <h2>Entre em Contato Conosco</h2>
+            <p>Tem alguma dúvida, sugestão ou gostaria de nos enviar uma mensagem? Preencha o formulário abaixo e retornaremos assim que possível.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome" required minlength="3">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefone (opcional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(16) 99999-9999" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Motivo do Contato</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Selecione um motivo...</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="parceria">Proposta de Parceria</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Você é:</legend>
+                        <div class="radio-group">
+                            <label><input type="radio" name="person_type" value="fisica" required> Pessoa Física</label>
+                            <label><input type="radio" name="person_type" value="juridica"> Pessoa Jurídica</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Escreva sua mensagem aqui..." required minlength="10"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        Eu aceito os termos de uso e a política de privacidade.
+                    </label>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="reset" class="reset-btn">Limpar</button>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer" style="background-color: #333333; color: #ffffff; padding: 25px 0; text-align: center; font-family: 'Nunito', sans-serif;">
+        <p style="margin: 0; font-size: 14px; letter-spacing: 0.5px;">&copy; 2025 YCare. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
